@@ -19,26 +19,26 @@ const imagens: any = {
 
 export default function ProdutoDetalhe() {
   const route = useRoute();
-  const { produto } = route.params as any;
-  const { adicionarAoCarrinho } = useApp();
+  const { e_produto } = route.params as any;
+  const { e_adicionarAoCarrinho } = useApp();
 
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView contentContainerStyle={c_styles.container}>
       <Image
-        source={imagens[produto.imagem]}
-        style={styles.imagem}
+        source={imagens[e_produto.imagem]}
+        style={c_styles.imagem}
         resizeMode="contain"
       />
-      <Text style={styles.nome}>{produto.nome}</Text>
-      <Text style={styles.categoria}>Categoria: {produto.categoria}</Text>
-      <Text style={styles.descricao}>{produto.descricao}</Text>
-      <Text style={styles.preco}>Preço: R$ {produto.preco.toFixed(2)}</Text>
-      <Button title="Adicionar ao Carrinho" onPress={() => adicionarAoCarrinho(produto)} />
+      <Text style={c_styles.nome}>{e_produto.nome}</Text>
+      <Text style={c_styles.categoria}>Categoria: {e_produto.categoria}</Text>
+      <Text style={c_styles.descricao}>{e_produto.descricao}</Text>
+      <Text style={c_styles.preco}>Preço: R$ {e_produto.preco.toFixed(2)}</Text>
+      <Button title="Adicionar ao Carrinho" onPress={() => e_adicionarAoCarrinho(e_produto)} />
     </ScrollView>
   );
 }
 
-const styles = StyleSheet.create({
+const c_styles = StyleSheet.create({
   container: {
     padding: 20,
     alignItems: 'center',

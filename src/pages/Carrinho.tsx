@@ -3,25 +3,25 @@ import { View, Text, FlatList, Button, StyleSheet } from 'react-native';
 import { useApp } from '../context/AppProvider';
 
 export default function Carrinho() {
-  const { carrinho, removerDoCarrinho, confirmarPedido } = useApp();
+  const { e_carrinho, c_removerDoCarrinho, c_confirmarPedido } = useApp();
 
   return (
     <View style={{ flex: 1, padding: 10 }}>
       <FlatList
-        data={carrinho}
+        data={e_carrinho}
         keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <View style={styles.item}>
             <Text style={styles.texto}>{item.imagem}{item.nome} QTN:{item.quantidade}</Text>
-            <Button title="Remover" onPress={() => removerDoCarrinho(item.id)} />
+            <Button title="Remover" onPress={() => c_removerDoCarrinho(item.id)} />
           </View>
         )}
         ListEmptyComponent={<Text style={styles.vazio}>Carrinho vazio</Text>}
       />
 
-      {carrinho.length > 0 && (
+      {e_carrinho.length > 0 && (
         <View style={styles.botaoConfirmar}>
-          <Button title="Confirmar Pedido" onPress={confirmarPedido} />
+          <Button title="Confirmar Pedido" onPress={c_confirmarPedido} />
         </View>
       )}
     </View>

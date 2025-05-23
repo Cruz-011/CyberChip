@@ -4,11 +4,11 @@ import { useNavigation } from '@react-navigation/native';
 import { useApp } from '../context/AppProvider';
 
 export default function CardProduto({ produto }: any) {
-  const { adicionarAoCarrinho } = useApp();
+  const { e_adicionarAoCarrinho } = useApp();
   const navigation = useNavigation();
 
   function handleAdicionar() {
-    adicionarAoCarrinho(produto);
+    e_adicionarAoCarrinho(produto);
     Alert.alert('Sucesso', 'Produto adicionado ao carrinho!');
   }
 

@@ -3,7 +3,7 @@ import { View, Text, Image, StyleSheet, Button } from 'react-native';
 import { useApp } from '../context/AppProvider';
 
 export default function ItemCarrinho({ item }: any) {
-  const { removerDoCarrinho } = useApp();
+  const { c_removerDoCarrinho } = useApp();
 
   return (
     <View style={styles.container}>
@@ -12,7 +12,7 @@ export default function ItemCarrinho({ item }: any) {
         <Text style={styles.nome}>{item.nome}</Text>
         <Text>Qtd: {item.quantidade}</Text>
         <Text style={styles.preco}>R$ {(item.preco * item.quantidade).toFixed(2)}</Text>
-        <Button title="Remover" onPress={() => removerDoCarrinho(item.id)} />
+        <Button title="Remover" onPress={() => c_removerDoCarrinho(item.id)} />
       </View>
     </View>
   );

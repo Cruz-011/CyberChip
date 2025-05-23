@@ -4,28 +4,28 @@ import CardProduto from '../components/CardProduto';
 import produtosJson from '../data/produtos.json';
 
 export default function Produtos() {
-  const [busca, setBusca] = useState('');
-  const [produtos, setProdutos] = useState(produtosJson);
+  const [e_busca, setBusca] = useState('');
+  const [c_produtos, setProdutos] = useState(produtosJson);
 
   useEffect(() => {
     const filtrados = produtosJson.filter(p =>
-  (p.titulo + p.descricao + p.categoria).toLowerCase().includes(busca.toLowerCase())
+  (p.titulo + p.descricao + p.categoria).toLowerCase().includes(e_busca.toLowerCase())
 );
 
     setProdutos(filtrados);
-  }, [busca]);
+  }, [e_busca]);
 
   return (
     <View style={{ flex: 1 }}>
       <TextInput
         placeholder="Buscar produtos..."
-        value={busca}
+        value={e_busca}
         onChangeText={setBusca}
-        style={styles.input}
+        style={c_styles.input}
         placeholderTextColor="#999"
       />
       <FlatList
-        data={produtos}
+        data={c_produtos}
         renderItem={({ item }) => <CardProduto produto={item} />}
         keyExtractor={item => item.id}
       />
@@ -33,7 +33,7 @@ export default function Produtos() {
   );
 }
 
-const styles = StyleSheet.create({
+const c_styles = StyleSheet.create({
   input: {
     backgroundColor: '#222',
     color: '#0ff',

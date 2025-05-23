@@ -18,20 +18,20 @@ interface Pedido {
 }
 
 interface AppContextProps {
-  listaProdutos: Produto[];
-  carrinho: Produto[];
-  pedidos: Pedido[];
-  adicionarAoCarrinho: (produto: Produto) => void;
-  removerDoCarrinho: (id: string) => void;
-  confirmarPedido: () => void;
+  c_listaProdutos: Produto[];
+  e_carrinho: Produto[];
+  c_pedidos: Pedido[];
+  e_adicionarAoCarrinho: (produto: Produto) => void;
+  c_removerDoCarrinho: (id: string) => void;
+  c_confirmarPedido: () => void;
 }
 
 const AppContext = createContext<AppContextProps>({} as AppContextProps);
 
 export function AppProvider({ children }: { children: React.ReactNode }) {
-  const [listaProdutos, setListaProdutos] = useState<Produto[]>(produtos);
-  const [carrinho, setCarrinho] = useState<Produto[]>([]);
-  const [pedidos, setPedidos] = useState<Pedido[]>([]);
+  const [c_listaProdutos, setListaProdutos] = useState<Produto[]>(produtos);
+  const [e_carrinho, setCarrinho] = useState<Produto[]>([]);
+  const [c_pedidos, setPedidos] = useState<Pedido[]>([]);
 
   useEffect(() => {
     AsyncStorage.getItem('carrinho').then(data => {
@@ -43,44 +43,44 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    AsyncStorage.setItem('carrinho', JSON.stringify(carrinho));
-    AsyncStorage.setItem('pedidos', JSON.stringify(pedidos));
-  }, [carrinho, pedidos]);
+    AsyncStorage.setItem('carrinho', JSON.stringify(e_carrinho));
+    AsyncStorage.setItem('pedidos', JSON.stringify(c_pedidos));
+  }, [e_carrinho, c_pedidos]);
 
-  const adicionarAoCarrinho = (produto: Produto) => {
-    const existente = carrinho.find(p => p.id === produto.id);
+  const e_adicionarAoCarrinho = (produto: Produto) => {
+    const existente = e_carrinho.find(p => p.id === produto.id);
     if (existente) {
       existente.quantidade = (existente.quantidade || 1) + 1;
-      setCarrinho([...carrinho]);
+      setCarrinho([...e_carrinho]);
     } else {
-      setCarrinho([...carrinho, { ...produto, quantidade: 1 }]);
+      setCarrinho([...e_carrinho, { ...produto, quantidade: 1 }]);
     }
   };
 
-  const removerDoCarrinho = (id: string) => {
-    const atualizado = carrinho.filter(p => p.id !== id);
+  const c_removerDoCarrinho = (id: string) => {
+    const atualizado = e_carrinho.filter(p => p.id !== id);
     setCarrinho(atualizado);
   };
 
-  const confirmarPedido = () => {
-    if (carrinho.length === 0) return;
+  const c_confirmarPedido = () => {
+    if (e_carrinho.length === 0) return;
     const novoPedido: Pedido = {
       id: Date.now().toString(),
-      itens: [...carrinho],
+      itens: [...e_carrinho],
     };
-    setPedidos([...pedidos, novoPedido]);
+    setPedidos([...c_pedidos, novoPedido]);
     setCarrinho([]);
   };
 
   return (
     <AppContext.Provider
       value={{
-        listaProdutos,
-        carrinho,
-        pedidos,
-        adicionarAoCarrinho,
-        removerDoCarrinho,
-        confirmarPedido,
+        c_listaProdutos,
+        e_carrinho,
+        c_pedidos,
+        e_adicionarAoCarrinho,
+        c_removerDoCarrinho,
+        c_confirmarPedido,
       }}
     >
       {children}
