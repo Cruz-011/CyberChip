@@ -46,9 +46,9 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextIndex = (currentIndex + 1) % slides.length;
-      flatListRef.current?.scrollToIndex({ index: nextIndex, animated: true });
-      setCurrentIndex(nextIndex);
+      const next = (currentIndex + 1) % slides.length;
+      flatListRef.current?.scrollToIndex({ index: next, animated: true });
+      setCurrentIndex(next);
     }, 4000);
     return () => clearInterval(interval);
   }, [currentIndex]);
@@ -57,13 +57,11 @@ export default function Home() {
     if (viewableItems.length > 0) setCurrentIndex(viewableItems[0].index);
   }).current;
 
-  const viewConfig = useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
-
   return (
     <View style={styles.container}>
       <Text style={styles.header}>CyberChip</Text>
 
-      <View style={{ height: 350 }}>
+      <View style={styles.carouselContainer}>
         <AnimatedFlatList
           ref={flatListRef}
           data={slides}
@@ -72,7 +70,7 @@ export default function Home() {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
           onViewableItemsChanged={onViewableItemsChanged}
-          viewabilityConfig={viewConfig}
+          viewabilityConfig={{ viewAreaCoveragePercentThreshold: 50 }}
           scrollEventThrottle={16}
           onScroll={Animated.event(
             [{ nativeEvent: { contentOffset: { x: scrollX } } }],
@@ -84,11 +82,13 @@ export default function Home() {
               index * width,
               (index + 1) * width,
             ];
+
             const scale = scrollX.interpolate({
               inputRange,
-              outputRange: [0.85, 1, 0.85],
+              outputRange: [0.9, 1, 0.9],
               extrapolate: 'clamp',
             });
+
             const opacity = scrollX.interpolate({
               inputRange,
               outputRange: [0.6, 1, 0.6],
@@ -96,18 +96,22 @@ export default function Home() {
             });
 
             return (
-              <Animated.View style={[styles.slide, { transform: [{ scale }], opacity }]}>
-                <Image source={item.image} style={styles.image} resizeMode="cover" />
+              <View style={styles.slide}>
+                <Animated.Image
+                  source={item.image}
+                  style={[styles.image, { transform: [{ scale }], opacity }]}
+                  resizeMode="cover"
+                />
                 <Text style={styles.title}>{item.title}</Text>
                 <Text style={styles.description}>{item.description}</Text>
-                <View style={styles.tagsContainer}>
-                  {item.tags.map((tag) => (
-                    <View key={tag} style={styles.tag}>
+                <View style={styles.tags}>
+                  {item.tags.map((tag, i) => (
+                    <View key={i} style={styles.tag}>
                       <Text style={styles.tagText}>{tag}</Text>
                     </View>
                   ))}
                 </View>
-              </Animated.View>
+              </View>
             );
           }}
         />
@@ -117,22 +121,20 @@ export default function Home() {
               key={i}
               style={[
                 styles.indicator,
-                i === currentIndex ? styles.indicatorActive : {},
+                i === currentIndex && styles.activeIndicator,
               ]}
             />
           ))}
         </View>
       </View>
 
-      <Text style={styles.welcomeText}>
-        Bem-vindo ao futuro! Aqui você encontra biochips para aprimoramento físico, sensorial e cerebral. 
-        Escolha, instale e seja mais que humano.
+      <Text style={styles.welcome}>
+        Bem-vindo ao futuro. Instale biochips e seja mais que humano.
       </Text>
 
       <TouchableOpacity
         style={styles.button}
         onPress={() => router.push('/produtos')}
-        activeOpacity={0.8}
       >
         <Text style={styles.buttonText}>Explorar Produtos</Text>
       </TouchableOpacity>
@@ -146,43 +148,44 @@ const styles = StyleSheet.create({
     backgroundColor: '#0a0a0f',
     paddingTop: 60,
     alignItems: 'center',
-    paddingHorizontal: 20,
+    paddingHorizontal: 16,
   },
   header: {
-    fontSize: 40,
+    fontSize: 42,
     color: '#00e5ff',
     fontWeight: '900',
     marginBottom: 20,
     textShadowColor: '#008fb3',
-    textShadowOffset: { width: 0, height: 0 },
-    textShadowRadius: 8,
+    textShadowRadius: 10,
+  },
+  carouselContainer: {
+    width: '100%',
+    height: 400,
   },
   slide: {
     width,
     alignItems: 'center',
-    paddingHorizontal: 20,
   },
   image: {
-    width: '90%',
-    height: 180,
-    borderRadius: 20,
-    marginBottom: 15,
+    width,
+    height: 220,
   },
   title: {
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: 24,
     color: '#00e5ff',
-    marginBottom: 6,
+    fontWeight: 'bold',
+    marginTop: 10,
   },
   description: {
-    fontSize: 16,
+    fontSize: 15,
     color: '#a0cfdc',
     textAlign: 'center',
-    marginBottom: 10,
+    marginTop: 5,
   },
-  tagsContainer: {
+  tags: {
     flexDirection: 'row',
     gap: 8,
+    marginTop: 8,
   },
   tag: {
     backgroundColor: '#004f61',
@@ -207,27 +210,25 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginHorizontal: 4,
   },
-  indicatorActive: {
+  activeIndicator: {
     backgroundColor: '#00e5ff',
     width: 12,
     height: 12,
   },
-  welcomeText: {
+  welcome: {
     color: '#a0cfdc',
-    fontSize: 16,
     textAlign: 'center',
-    marginVertical: 20,
+    marginVertical: 16,
     paddingHorizontal: 10,
   },
   button: {
     backgroundColor: '#00e5ff',
-    paddingVertical: 18,
-    paddingHorizontal: 50,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
     borderRadius: 30,
-    marginBottom: 30,
   },
   buttonText: {
-    color: '#000',
+    color: '#0a0a0f',
     fontWeight: 'bold',
     fontSize: 16,
   },
