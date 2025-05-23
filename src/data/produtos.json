@@ -5,7 +5,6 @@
     "titulo": "Chip Titan-X",
     "descricao": "Força bruta e resistência aumentada.",
     "categoria": "Físico",
-    "imagem": "Cover_Image_Compressed2.jpg",
     "preco": 15000
   },
   {
@@ -14,7 +13,6 @@
     "titulo": "Chip Velocity-V",
     "descricao": "Aprimora velocidade e reflexos.",
     "categoria": "Físico",
-    "imagem": "velocityv.png",
     "preco": 12000
   },
   {
@@ -23,7 +21,6 @@
     "titulo": "Chip IronFist",
     "descricao": "Punhos com potência hidráulica.",
     "categoria": "Físico",
-    "imagem": "ironfist.png",
     "preco": 10000
   },
   {
@@ -32,7 +29,6 @@
     "titulo": "Chip FlexCore",
     "descricao": "Aprimora flexibilidade e agilidade.",
     "categoria": "Físico",
-    "imagem": "flexcore.png",
     "preco": 13000
   },
   {
@@ -41,7 +37,6 @@
     "titulo": "Chip ShieldPlus",
     "descricao": "Aprimoramento de resistência óssea.",
     "categoria": "Físico",
-    "imagem": "shieldplus.png",
     "preco": 14000
   },
   {
@@ -50,7 +45,6 @@
     "titulo": "Chip Eagle-Eye",
     "descricao": "Visão noturna e térmica.",
     "categoria": "Sensorial",
-    "imagem": "eagleeye.png",
     "preco": 9000
   },
   {
@@ -59,7 +53,6 @@
     "titulo": "Chip SonicHearing",
     "descricao": "Audição super sensível.",
     "categoria": "Sensorial",
-    "imagem": "sonichearing.png",
     "preco": 9500
   },
   {
@@ -68,7 +61,6 @@
     "titulo": "Chip SmellX",
     "descricao": "Olfato ultra sensível.",
     "categoria": "Sensorial",
-    "imagem": "smellx.png",
     "preco": 8500
   },
   {
@@ -77,7 +69,6 @@
     "titulo": "Chip SixthSense",
     "descricao": "Percepção além dos sentidos humanos.",
     "categoria": "Sensorial",
-    "imagem": "sixthsense.png",
     "preco": 11000
   },
   {
@@ -86,7 +77,6 @@
     "titulo": "Chip InfraScan",
     "descricao": "Scanner infravermelho integrado.",
     "categoria": "Sensorial",
-    "imagem": "infrascan.png",
     "preco": 9800
   },
   {
@@ -95,7 +85,6 @@
     "titulo": "Chip CortexPlus",
     "descricao": "Acelera o raciocínio lógico.",
     "categoria": "Cerebral",
-    "imagem": "cortexplus.png",
     "preco": 12000
   },
   {
@@ -113,7 +102,6 @@
     "titulo": "Chip HackMaster",
     "descricao": "Permite invasão de sistemas.",
     "categoria": "Cerebral",
-    "imagem": "hackmaster.png",
     "preco": 17000
   },
   {
@@ -122,7 +110,6 @@
     "titulo": "Chip NeuralLink",
     "descricao": "Aprimora conexão cérebro-máquina.",
     "categoria": "Cerebral",
-    "imagem": "neurallink.png",
     "preco": 16000
   },
   {
@@ -131,7 +118,6 @@
     "titulo": "Chip LogicBoost",
     "descricao": "Raciocínio 3x mais rápido.",
     "categoria": "Cerebral",
-    "imagem": "logicboost.png",
     "preco": 12500
   }
 ]
