@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createStackNavigator } from '@react-navigation/stack';
 import { AppProvider } from './src/context/AppProvider';
 import { StatusBar } from 'expo-status-bar';
 
@@ -8,8 +9,25 @@ import Home from './src/pages/Home';
 import Produtos from './src/pages/Produtos';
 import Carrinho from './src/pages/Carrinho';
 import Pedidos from './src/pages/Pedidos';
+import ProdutoDetalhe from './src/pages/ProdutoDetalhe';
 
 const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator();
+
+
+function ProdutosStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        headerStyle: { backgroundColor: '#121212' },
+        headerTintColor: '#00FFFF',
+      }}
+    >
+      <Stack.Screen name="Produtos" component={Produtos} />
+      <Stack.Screen name="ProdutoDetalhe" component={ProdutoDetalhe} options={{ title: 'Detalhes do Produto' }} />
+    </Stack.Navigator>
+  );
+}
 
 export default function App() {
   return (
@@ -28,7 +46,7 @@ export default function App() {
           }}
         >
           <Drawer.Screen name="Home" component={Home} />
-          <Drawer.Screen name="Produtos" component={Produtos} />
+          <Drawer.Screen name="Produtos" component={ProdutosStack} />
           <Drawer.Screen name="Carrinho" component={Carrinho} />
           <Drawer.Screen name="Pedidos" component={Pedidos} />
         </Drawer.Navigator>
