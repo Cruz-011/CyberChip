@@ -1,0 +1,137 @@
+[
+  {
+    "id": "1",
+    "nome": "Chip Titan-X",
+    "titulo": "Chip Titan-X",
+    "descricao": "Força bruta e resistência aumentada.",
+    "categoria": "Físico",
+    "imagem": "Cover_Image_Compressed2.jpg",
+    "preco": 15000
+  },
+  {
+    "id": "2",
+    "nome": "Chip Velocity-V",
+    "titulo": "Chip Velocity-V",
+    "descricao": "Aprimora velocidade e reflexos.",
+    "categoria": "Físico",
+    "imagem": "velocityv.png",
+    "preco": 12000
+  },
+  {
+    "id": "3",
+    "nome": "Chip IronFist",
+    "titulo": "Chip IronFist",
+    "descricao": "Punhos com potência hidráulica.",
+    "categoria": "Físico",
+    "imagem": "ironfist.png",
+    "preco": 10000
+  },
+  {
+    "id": "4",
+    "nome": "Chip FlexCore",
+    "titulo": "Chip FlexCore",
+    "descricao": "Aprimora flexibilidade e agilidade.",
+    "categoria": "Físico",
+    "imagem": "flexcore.png",
+    "preco": 13000
+  },
+  {
+    "id": "5",
+    "nome": "Chip ShieldPlus",
+    "titulo": "Chip ShieldPlus",
+    "descricao": "Aprimoramento de resistência óssea.",
+    "categoria": "Físico",
+    "imagem": "shieldplus.png",
+    "preco": 14000
+  },
+  {
+    "id": "6",
+    "nome": "Chip Eagle-Eye",
+    "titulo": "Chip Eagle-Eye",
+    "descricao": "Visão noturna e térmica.",
+    "categoria": "Sensorial",
+    "imagem": "eagleeye.png",
+    "preco": 9000
+  },
+  {
+    "id": "7",
+    "nome": "Chip SonicHearing",
+    "titulo": "Chip SonicHearing",
+    "descricao": "Audição super sensível.",
+    "categoria": "Sensorial",
+    "imagem": "sonichearing.png",
+    "preco": 9500
+  },
+  {
+    "id": "8",
+    "nome": "Chip SmellX",
+    "titulo": "Chip SmellX",
+    "descricao": "Olfato ultra sensível.",
+    "categoria": "Sensorial",
+    "imagem": "smellx.png",
+    "preco": 8500
+  },
+  {
+    "id": "9",
+    "nome": "Chip SixthSense",
+    "titulo": "Chip SixthSense",
+    "descricao": "Percepção além dos sentidos humanos.",
+    "categoria": "Sensorial",
+    "imagem": "sixthsense.png",
+    "preco": 11000
+  },
+  {
+    "id": "10",
+    "nome": "Chip InfraScan",
+    "titulo": "Chip InfraScan",
+    "descricao": "Scanner infravermelho integrado.",
+    "categoria": "Sensorial",
+    "imagem": "infrascan.png",
+    "preco": 9800
+  },
+  {
+    "id": "11",
+    "nome": "Chip CortexPlus",
+    "titulo": "Chip CortexPlus",
+    "descricao": "Acelera o raciocínio lógico.",
+    "categoria": "Cerebral",
+    "imagem": "cortexplus.png",
+    "preco": 12000
+  },
+  {
+    "id": "12",
+    "nome": "Chip MemoryVault",
+    "titulo": "Chip MemoryVault",
+    "descricao": "Armazena até 50TB de memória pessoal.",
+    "categoria": "Cerebral",
+    "imagem": "memoryvault.png",
+    "preco": 15000
+  },
+  {
+    "id": "13",
+    "nome": "Chip HackMaster",
+    "titulo": "Chip HackMaster",
+    "descricao": "Permite invasão de sistemas.",
+    "categoria": "Cerebral",
+    "imagem": "hackmaster.png",
+    "preco": 17000
+  },
+  {
+    "id": "14",
+    "nome": "Chip NeuralLink",
+    "titulo": "Chip NeuralLink",
+    "descricao": "Aprimora conexão cérebro-máquina.",
+    "categoria": "Cerebral",
+    "imagem": "neurallink.png",
+    "preco": 16000
+  },
+  {
+    "id": "15",
+    "nome": "Chip LogicBoost",
+    "titulo": "Chip LogicBoost",
+    "descricao": "Raciocínio 3x mais rápido.",
+    "categoria": "Cerebral",
+    "imagem": "logicboost.png",
+    "preco": 12500
+  }
+]
