@@ -1,5 +1,5 @@
 # CyberChip
-
+Grupo: Enzo Marsola 556310. Cauan Cruz 558238
 Aplicativo mobile desenvolvido em React Native para a disciplina de CP2. O app simula a navegação e seleção de chips cibernéticos com funcionalidades de listagem, detalhamento e carrinho de compras.
 
 ## 📱 Plataforma
