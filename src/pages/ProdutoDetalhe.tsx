@@ -13,7 +13,7 @@ const imagens: any = {
   'sonichearing.png': require('../../assets/produtos/download (1).jpg'),
   'sixthsense.png': require('../../assets/produtos/download (1).jpg'),
   'cortexplus.png': require('../../assets/produtos/titanx.png'),
-  'hackmaster.png': require('../../assets/produtos/relic.webp'),
+  'hackmaster.png': require('../../assets/produtos/titanx.pn'),
   'neurallink.png': require('../../assets/produtos/relict3.jpg'),
 };
 
