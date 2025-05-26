@@ -5,15 +5,15 @@ import { useApp } from '../context/AppProvider';
 
 // Mapeamento de imagens locais
 const imagens: any = {
-  'titanx.png': require('../../assets/produtos/titanx.png'),
+  'titanx.png': require('../../assets/produtos/download.jpg'),
   'velocityv.png': require('../../assets/produtos/download.jpg'),
   'ironfist.png': require('../../assets/produtos/download.jpg'),
   'shieldplus.png': require('../../assets/produtos/relict3.jpg'),
-  'eagleeye.png': require('../../assets/produtos/titanx.png'),
+  'eagleeye.png': require('../../assets/produtos/relict3.jpg'),
   'sonichearing.png': require('../../assets/produtos/download (1).jpg'),
   'sixthsense.png': require('../../assets/produtos/download (1).jpg'),
-  'cortexplus.png': require('../../assets/produtos/titanx.png'),
-  'hackmaster.png': require('../../assets/produtos/titanx.pn'),
+  'cortexplus.png': require('../../assets/produtos/relict3.jpg'),
+  'hackmaster.png': require('../../assets/produtos/relict3.jpg'),
   'neurallink.png': require('../../assets/produtos/relict3.jpg'),
 };
 

@@ -15,7 +15,7 @@ const { width } = Dimensions.get('window');
 const slides = [
   {
     key: '1',
-    image: require('../../assets/relic.webp'),
+    image: require('../../assets/relic2.jpg'),
     title: 'Biochip Neural-X',
     description: 'Amplie sua inteligência e reações cognitivas em 300%.',
     tags: ['Poder', 'Velocidade', 'Integração'],

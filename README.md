@@ -1,111 +1,113 @@
-# CyberChip
-Grupo: Enzo Marsola 556310. Cauan Cruz 558238
-Aplicativo mobile desenvolvido em React Native para a disciplina de CP2. O app simula a navegação e seleção de chips cibernéticos com funcionalidades de listagem, detalhamento e carrinho de compras.
 
-## 📱 Plataforma
+# 🚀 **CyberChip**
 
-- Compatível com Android.
-- Adaptado para modos **portrait** e **landscape**.
+Grupo: **Enzo Marsola (556310)** | **Cauan Cruz (558238)**  
+Aplicativo mobile desenvolvido em **React Native** para a disciplina de **CP2**.  
+O app simula a navegação e seleção de **chips cibernéticos**, com funcionalidades de **listagem, detalhamento e carrinho de compras.**
 
 ---
 
-## 🚀 Funcionalidades
+## 📱 **Plataforma**
 
-- 📂 **Navegação por Menu**: Drawer Navigation com telas para Home, Produtos, Carrinho e Pedidos.
-- 📃 **Lista de Produtos**: com busca por nome e descrição, imagens e detalhes de cada produto.
-- 🛒 **Carrinho de Compras**: com badge no menu, controle de quantidade e exclusão de itens.
-- 💾 **Armazenamento Assíncrono**: produtos carregados de um arquivo local JSON e persistência do carrinho com `AsyncStorage`.
-- 🌐 **Offline Ready**: app funcional sem conexão, incluindo acesso às imagens já carregadas.
-- 🎨 **Dark Mode**: interface moderna com tema escuro.
+- ✔️ **Compatível com Android**
+- ✔️ Suporte total aos modos **portrait** e **landscape**
 
 ---
 
-## 🧠 Estrutura de Código
+## 🔥 **Funcionalidades**
 
-Organizado segundo os princípios da **Clean Architecture**:
+- 📂 **Navegação por Menu** — Drawer Navigation com telas para **Home, Produtos, Carrinho e Pedidos**
+- 🔍 **Busca inteligente** — por nome e descrição dos produtos
+- 📃 **Lista de Produtos** — com imagens, descrição e preço
+- 🛒 **Carrinho de Compras** — com controle de quantidade, badge de itens e remoção
+- 💾 **Armazenamento Local** — persistência de dados com `AsyncStorage`
+- 🌐 **Offline Ready** — o app funciona mesmo sem internet (inclusive imagens)
+- 🎨 **Tema Dark** — interface moderna e responsiva
+- 🚀 **Build Nativa APK disponível**
+
+---
+
+## 🧠 **Arquitetura do Código** — _Clean Architecture no osso_
 
 ```
 src/
-├── assets/                # Imagens dos produtos
-├── components/            # Componentes reutilizáveis
-├── context/               # Gerenciador de estado global (AppProvider)
-├── data/                  # Arquivo JSON com produtos
-├── pages/                 # Telas principais (Home, Produtos, Carrinho, Pedidos, ProdutoDetalhe)
-├── services/              # Lógica de dados (ex: leitura do JSON)
-├── stores/                # Estado centralizado (opcional)
-└── App.tsx                # Entry point
+├── assets/         # Imagens dos produtos
+├── components/     # Componentes reutilizáveis (UI/UX)
+├── context/        # Context API para estado global
+├── data/           # JSON de produtos
+├── pages/          # Telas principais (Home, Produtos, Carrinho, Pedidos, Detalhe)
+├── services/       # Regras de negócio (ex: carregar produtos)
+└── App.tsx         # Entry point
 ```
 
-- **Componentes**: CardProduto, BadgeCarrinho, etc.
-- **Estado Global**: via Context API (`useApp`)
-- **3 Telas principais** + tela de detalhe
+- ♻️ Componentes: `CardProduto`, `BadgeCarrinho`, etc.
+- 🔗 Estado global: via Context (`useApp`)
+- 🚥 Navegação: Drawer + Stack para detalhe
 
 ---
 
-## 📦 Bibliotecas Utilizadas
+## 📦 **Bibliotecas de Poder**
 
 - `react-native`
+- `expo`
 - `@react-navigation/native`
 - `@react-navigation/drawer`
 - `@react-navigation/stack`
 - `react-native-gesture-handler`
 - `react-native-reanimated`
 - `@react-native-async-storage/async-storage`
-- `expo` e `expo-status-bar`
-
-> Todas as dependências estão listadas no `package.json`.
 
 ---
 
-## 🛠️ Instalação
+## 🚀 **Instalação Local**
 
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/seu-usuario/CyberChip.git
-   ```
-
-2. **Instale as dependências**:
-   ```bash
-   npm install
-   ```
-
-3. **Execute o projeto** (em modo dev):
-   ```bash
-   npx expo start
-   ```
-
----
-
-## 📦 APK
-
-O APK está disponível na pasta do repositório:
-```
-/build/CyberChip.apk
+1. Clone o projeto:
+```bash
+git clone https://github.com/seu-usuario/CyberChip.git
 ```
 
-Instale em seu Android para testar a versão nativa offline.
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Execute o app:
+```bash
+npx expo start
+```
 
 ---
 
-## 👨‍💻 Créditos
+## 📥 **Download do APK**
 
-Este projeto foi desenvolvido como parte da avaliação da disciplina CP2 - React Native.
+> 👉 **[Clique aqui para baixar o APK](https://expo.dev/accounts/cauandacruz/projects/CyberChip/builds/503f3f2f-94fd-4102-ae2f-cd05e198c175)**
 
-> As variáveis, métodos e funções seguem a nomenclatura com as iniciais dos integrantes do grupo.
+Ou escaneie o QR Code diretamente na página do Expo para instalar no seu dispositivo Android.
 
 ---
 
-## ✅ Requisitos Atendidos
+## ✅ **Requisitos Entregues**
 
-- [x] Navegação com Drawer
-- [x] Lista com busca por nome e descrição
-- [x] Detalhes do produto com imagem grande
-- [x] Carrinho com controle de quantidade
-- [x] Estado global via Context
-- [x] Organização em componentes, telas, serviços e contextos
-- [x] Funcionalidade offline
-- [x] Aplicativo testado nativamente no Android
-- [x] Clean Architecture aplicada
-- [x] Build final incluída no repositório
+- ✔️ Drawer Navigation implementado
+- ✔️ Lista com busca inteligente
+- ✔️ Detalhes dos produtos com imagens grandes
+- ✔️ Carrinho funcional com badge e controle de quantidade
+- ✔️ Estado global via Context API
+- ✔️ Organização modular (componentes, telas, serviços e contexto)
+- ✔️ Funcionalidade Offline
+- ✔️ Dark Mode com UI responsiva
+- ✔️ Testado nativamente no Android
+- ✔️ APK gerado e entregue
+- ✔️ Clean Architecture aplicada de ponta a ponta
 
+---
 
+## 👨‍💻 **Créditos**
+
+Projeto desenvolvido por:
+
+- **Enzo Marsola** — RM: 556310  
+- **Cauan Cruz** — RM: 558238  
+
+Disciplina de **CP2 - React Native**  
+> As variáveis, funções e métodos seguem a nomenclatura baseada nas iniciais dos integrantes.
