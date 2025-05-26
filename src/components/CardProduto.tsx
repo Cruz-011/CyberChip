@@ -13,15 +13,15 @@ export default function CardProduto({ produto }: any) {
   }
 
   function irParaDetalhes() {
-    navigation.navigate('ProdutoDetalhe' as never, { produto } as never);
+    navigation.navigate('ProdutoDetalhe' as never, { e_produto: produto } as never);
   }
 
   return (
     <TouchableOpacity onPress={irParaDetalhes} style={styles.card}>
       <Text style={styles.nome}>{produto.nome}</Text>
       <Text style={styles.descricao}>{produto.descricao}</Text>
-      <Text style={styles.categoria}>{produto.categoria}</Text>
-      <Text style={styles.preco}>R$ {produto.preco}</Text>
+      <Text style={styles.categoria}>Categoria: {produto.categoria}</Text>
+      <Text style={styles.preco}>R$ {produto.preco.toFixed(2)}</Text>
       <Button title="Adicionar" onPress={handleAdicionar} />
     </TouchableOpacity>
   );
